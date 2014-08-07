@@ -44,3 +44,9 @@ Valgrind is a large binary (>150MB or >200MB depending on the toolchain choice) 
 * Since the valgrind binaries require installation to `/opt/valgrind`, we'll create a simlink to the uSD install: `ln -s /media/BEAGLEBONE/opt/valgrind /opt/valgrind`
 * If you want to use valgrind from remote GUI tools such as Qt Creator, you might also want to simlink valgrind into the default system path (Qt Creator in Windows won't allow '/' in the valgrind path): `ln -s /opt/valgrind/bin/valgrind /usr/bin/valgrind`
 
+## Prebuild Binaries
+
+Prebuild binaries for the BeagleBone are provided in separate branches:
+
+* Branch 'build-sourcery': Sourcery CodeBench Lite build, `valgrind-beaglebone-sourcerycodebenchlite.tar.gz`
+* Branch 'build-ubuntu': Ubuntu ARM build, `valgrind-beaglebone-ubuntuarm.tar.gz`

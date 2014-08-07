@@ -15,7 +15,7 @@ Instructions for building valgrind-3.9.0 for the BeagleBone Black using Vagrant.
 
 This environment is setup to build using either the ARM toolchain in the Ubuntu repositories (arm-linux-gnueabi) or using Mentor Graphics Sourcery CodeBench Lite toolchain (arm-none-linux-gnueabi).  
 
-To select between the two uncomment either line 23 or 24 in `Vagrantfile`
+To select between the two, uncomment either line 23 or 24 in `Vagrantfile`
 
 * Ubuntu ARM toolchain: `crosscompiler = 'ubuntu'`
 * Sourcery CodeBench: `crosscompiler = 'sourcery'`

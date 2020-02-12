@@ -50,7 +50,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  # config.vm.synced_folder "valgrind-3.9.0", "/valgrind_source"
+  # config.vm.synced_folder "valgrind-3.15.0", "/valgrind_source"
   
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -170,22 +170,22 @@ SCRIPT
 echo "Starting valgrind specific provisioning"
 echo "Downloading valgrind sources"
 cd /home/vagrant
-wget -q http://valgrind.org/downloads/valgrind-3.9.0.tar.bz2
+wget -q https://sourceware.org/pub/valgrind/valgrind-3.15.0.tar.bz2
 echo "Download complete"
 echo "Unpacking valgrind"
-bzip2 -d valgrind-3.9.0.tar.bz2
-tar -xf valgrind-3.9.0.tar
+bzip2 -d valgrind-3.15.0.tar.bz2
+tar -xf valgrind-3.15.0.tar
 echo "Copying build scripts"
-cp /vagrant/beaglebone-build.sh /home/vagrant/valgrind-3.9.0/.
-dos2unix /home/vagrant/valgrind-3.9.0/beaglebone-build.sh
-chown vagrant:vagrant /home/vagrant/valgrind-3.9.0/beaglebone-build.sh
-cp /vagrant/beaglebone-postbuild.sh /home/vagrant/valgrind-3.9.0/.
-dos2unix /home/vagrant/valgrind-3.9.0/beaglebone-postbuild.sh
-chown vagrant:vagrant /home/vagrant/valgrind-3.9.0/beaglebone-postbuild.sh
+cp /vagrant/beaglebone-build.sh /home/vagrant/valgrind-3.15.0/.
+dos2unix /home/vagrant/valgrind-3.15.0/beaglebone-build.sh
+chown vagrant:vagrant /home/vagrant/valgrind-3.15.0/beaglebone-build.sh
+cp /vagrant/beaglebone-postbuild.sh /home/vagrant/valgrind-3.15.0/.
+dos2unix /home/vagrant/valgrind-3.15.0/beaglebone-postbuild.sh
+chown vagrant:vagrant /home/vagrant/valgrind-3.15.0/beaglebone-postbuild.sh
 echo "Finished provisioning"
 echo "Usage: "
-echo "   - Run ./beaglebone-build.sh in /home/vagrant/valgrind-3.9.0 to build valgrind"
-echo "   - Run ./beaglebone-postbuild.sh in /home/vagrant/valgrind-3.9.0 to package binaries as valgrind-beaglebone.tar.gz in /vagrant"
+echo "   - Run ./beaglebone-build.sh in /home/vagrant/valgrind-3.15.0 to build valgrind"
+echo "   - Run ./beaglebone-postbuild.sh in /home/vagrant/valgrind-3.15.0 to package binaries as valgrind-beaglebone.tar.gz in /vagrant"
 SCRIPT
   config.vm.provision "shell", inline: $script
 

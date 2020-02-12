@@ -20,8 +20,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # externally downloaded. See Readme.md for more details
   #
   # Uncomment one of the following two lines to select compiler.
-  crosscompiler = 'sourcery'
-  # crosscompiler = 'ubuntu'
+  # crosscompiler = 'sourcery'
+  crosscompiler = 'ubuntu'
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ -e /usr/bin/arm-linux-gnueabi-gcc ]
+if [ -e /usr/bin/arm-linux-gnueabi-gcc ]; then
 	# if using gcc-arm-linux-gnueabi from Ubuntu sources
 	export CROSS_COMPILE=arm-linux-gnueabi-
 else
@@ -16,7 +16,7 @@ export LD=${CROSS_COMPILE}ld
 export AR=${CROSS_COMPILE}ar
 
 
-if [ -e /usr/bin/arm-linux-gnueabi-gcc ]
+if [ -e /usr/bin/arm-linux-gnueabi-gcc ]; then
 	# if using gcc-arm-linux-gnueabi from Ubuntu sources
 	./configure --target=arm-linux-gnueabi --host=armv7-none-linux-gnueabi --prefix=/opt/valgrind CFLAGS=-static
 else
